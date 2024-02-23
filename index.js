@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: 'your-secret-key', resave: true, saveUninitialized: true }));
 
 app.set('view engine', 'ejs');
-
+app.use(express.static('public'));
 // Sample user credentials (replace with your authentication logic)
 const validUser = {
   username: 'user',
