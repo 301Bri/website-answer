@@ -47,7 +47,6 @@ app.get('/files', (req, res) => {
 // Handle file upload
 app.post('/upload', upload.single('file'), (req, res) => {
   res.json({ success: true, message: 'File uploaded successfully!' });
-});
+})
 
 
-});
