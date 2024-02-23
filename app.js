@@ -4,6 +4,7 @@ const multer = require('multer');
 const path = require('path');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 
 // Set up storage for multer
@@ -47,6 +48,8 @@ app.get('/files', (req, res) => {
 // Handle file upload
 app.post('/upload', upload.single('file'), (req, res) => {
   res.json({ success: true, message: 'File uploaded successfully!' });
+});
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 })
-
 
